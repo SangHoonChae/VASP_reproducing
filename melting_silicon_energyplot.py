@@ -2,10 +2,10 @@ import matplotlib.pyplot as plt
 xx = []
 yy = []
 
-with open('/home/dein/VASP_dein/md-part1/MD/energy_conv_test.dat', 'r') as convtest:
-    lines = convtest.readlines()
+with open('/home/dein/VASP_dein/md-part1/MD/energy_plot.txt', 'r') as totenplot:
+    lines = totenplot.readlines()
 
-'''
+
 for i in range(100, 601, 10):
     xx.append(i)
 print(xx)
@@ -25,3 +25,4 @@ plt.plot(xx, yy)
 plt.xlabel("ENCUT")
 plt.ylabel("'E0=' (OSZICAR)")
 plt.show() 
+'''
