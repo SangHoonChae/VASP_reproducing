@@ -7,10 +7,10 @@ with open('/home/dein/Downloads/DOSCAR', 'r') as DOSCAR:
     lines = DOSCAR.readlines()
 
 header = lines[5].split()
-print(header)
+print("header is ", header)
 E_fermi = float(header[3])
 NEDOS = int(header[2])
-print (E_fermi, NEDOS)
+print ("fermi and NEDOS is ", E_fermi, NEDOS)
 
 for i in range(6, 6+NEDOS):
     m = lines[i].split()
@@ -25,7 +25,7 @@ plt.plot(xx, yy)
 plt.xlabel("Energy(eV)")
 plt.ylabel("DOS(1/eV)")
 plt.axvline(0, color="grey", linestyle="--", label="E_Fermi")
-plt.axis([-2.0,2.0,-2.0,80.0])
+plt.axis([-10.0,10.0,-6.0,4.0])
 plt.title("RING-Graphene-RING DOS")
 plt.legend()
 plt.grid()
