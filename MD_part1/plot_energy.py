@@ -3,12 +3,13 @@ xx = []
 yy = []
 yy2 = []
 
-with open('/home/dein/VASP_dein/md-part1/MD/energy_list.dat', 'r') as toten:
+with open('/home/dein/VASP_dein/md-part1/MD/energy_list2.dat', 'r') as toten:
     lines = toten.readlines()
 
+count =len(lines)
+print("count is" ,count)
 
-
-for i in range(2,32):
+for i in range(2,count):
     lines[i] = lines[i].split()
     print(lines[i])
     xx.append(int(lines[i][0]))
@@ -21,12 +22,12 @@ print(yy2)
 
 plt.figure(figsize=(6,4))
 plt.plot(xx, yy, label="total energy")
-plt.plot(xx, yy2, label="ion-Electron")
+#plt.plot(xx, yy2, label="ion-Electron")
 plt.xlabel("Step")
 plt.ylabel("Energy(eV)")
 #plt.axis([0.0,30.0,-0.323,-0.322])
 plt.title("energy change during MD simulation")
 plt.legend()
 plt.grid()
-plt.savefig("plot_energy.png")
-#plt.show() 
+#plt.savefig("plot_energy.png")
+plt.show() 
