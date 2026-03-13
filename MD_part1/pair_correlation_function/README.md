@@ -15,14 +15,18 @@ gnuplot pair_correlation.gp
 
 notes)
 
-g(r) at short distance shows the average distance between the closest two atom.
-It appears as first peak which is alike bonding length. If you intgrate under the graph, you can get the coordination number.
+At short distances, g(r) shows the average distance between the two closest atoms (or nearest neighbors).
 
-In this example, there ar no value at 0,1 Angstrom due to the Pauli exclusion principle.
+It appears as the first peak, which corresponds to the bond length. If you integrate the area under the peak, you can get the coordination number.
 
-In 90fs MD, first peak appears at 2.4 Angstrom and this means the average bonding length.
+In this example, there are no values between 0 and 1 Angstrom due to the Pauli exclusion principle.
 
-You can distinguish the phase of the system by the large distance (ex. 4 Ang) g(r).
+At 90 fs in the MD simulation, the first peak appears at 2.4 Angstrom, which represents the average bond length.
 
-Crystall structure (long-range order) : the Peak appears.
-liquid / gas (Disorderd) : g(r) converges to ~1
+You can distinguish the phase of the system by observing g(r) at large distances (e.g., > 4 Ang).
+
+    Crystal structure (long-range order): Distinct peaks continue to appear.
+
+    Liquid / gas (disordered): g(r) converges to ~1.
+
+! Also note that it makes no sense to display g(r) for r longer than half the shortest dimension of the supercell. That is, here r should be kept below 5.4 Å.
