@@ -7,7 +7,10 @@ yy2 = []
 with open('/home/dein/VASP_dein/md-part1/MD/temperature_list.dat', 'r') as toten:
     lines = toten.readlines()
 
-for i in range(2, 32):
+count =len(lines)
+print("count is" ,count)
+
+for i in range(2,count):
     line_split = lines[i].split()
     print(line_split)
     xx.append(int(line_split[0]))
