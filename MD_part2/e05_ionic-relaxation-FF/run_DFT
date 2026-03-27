@@ -1,0 +1,17 @@
+#!/bin/bash
+
+drct=$(pwd)
+
+for i in 0.960 0.965 0.970 0.975 0.980 0.985 0.990 0.995 1.000 1.005 1.010 1.020 1.030
+do
+  cd $drct
+  if ! test -d $i
+  then
+    mkdir $i
+    cp POTCAR INCAR KPOINTS $i
+    cd $i
+    awk '{a=$0;if (NR==2) {a="'${i}'"};print a}' ${drct}/POSCAR.ref > POSCAR
+    mpirun.openmpi --bind-to core -np 64 ~/build/VASP/vasp.6.5.1/bin/openmpi/vasp_std
+  fi
+done
+

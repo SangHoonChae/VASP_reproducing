@@ -22,4 +22,5 @@ plt.legend()
 plt.grid(True, linestyle='--', alpha=0.6)
 
 # 5. Show or save
+plt.savefig("volume_energy_comparison.png", dpi=300)  # Save the figure with high resolution
 plt.show()
